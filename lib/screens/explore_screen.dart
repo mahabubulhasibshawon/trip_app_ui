@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../widgets/build_tab_content.dart';
+
 class ExploreScreen extends StatefulWidget {
   const ExploreScreen({super.key});
 
@@ -34,11 +36,11 @@ class _ExploreScreenState extends State<ExploreScreen>
         backgroundColor: Colors.white,
         body: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -59,11 +61,11 @@ class _ExploreScreenState extends State<ExploreScreen>
                   ),
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         CupertinoIcons.location_solid,
                         color: Color(0xFF176FF2),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 6,
                       ),
                       Text(
@@ -71,7 +73,7 @@ class _ExploreScreenState extends State<ExploreScreen>
                         style: GoogleFonts.robotoCondensed(
                           fontWeight: FontWeight.w500,
                           fontSize: 16,
-                          color: Color(0xFF606060),
+                          color: const Color(0xFF606060),
                         ),
                       )
                     ],
@@ -80,13 +82,14 @@ class _ExploreScreenState extends State<ExploreScreen>
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 5),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
                 decoration: BoxDecoration(
-                    color: Color(0xFFF3F8FE),
+                    color: const Color(0xFFF3F8FE),
                     borderRadius: BorderRadius.circular(20)),
-                child: TextField(
+                child: const TextField(
                   decoration: InputDecoration(
                     hintText: "Find places to visit",
                     border: InputBorder.none,
@@ -96,31 +99,38 @@ class _ExploreScreenState extends State<ExploreScreen>
               ),
             ),
             TabBar(
-                controller: _tabController,
-                indicatorColor: Color(0xFF176FF2),
-                labelColor: Color(0xFF176FF2),
-                unselectedLabelColor: Color(0xFFB8B8B8),
-                labelStyle: GoogleFonts.robotoCondensed(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
-                ),
-                unselectedLabelStyle: GoogleFonts.robotoCondensed(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 16
-                ),
-                tabs: [
-                  Tab(text: 'Location'),
-                  Tab(text: 'Hotels'),
-                  Tab(text: 'Foods'),
-                  Tab(text: 'Adventure'),
-                ])
+              controller: _tabController,
+              indicatorColor: const Color(0xFF176FF2),
+              labelColor: const Color(0xFF176FF2),
+              unselectedLabelColor: const Color(0xFFB8B8B8),
+              labelStyle: GoogleFonts.robotoCondensed(
+                fontSize: 16,
+                fontWeight: FontWeight.w700,
+              ),
+              unselectedLabelStyle: GoogleFonts.robotoCondensed(
+                  fontWeight: FontWeight.w400, fontSize: 16),
+              tabs: const [
+                Tab(text: 'Location'),
+                Tab(text: 'Hotels'),
+                Tab(text: 'Foods'),
+                Tab(text: 'Adventure'),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Expanded(
+                child: TabBarView(controller: _tabController,
+                    children: [
+                      BuildTabContent(tab: 'location',),
+                    ]))
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
-            fixedColor: Color(0xFF176FF2),
+            fixedColor: const Color(0xFF176FF2),
             currentIndex: 0,
             unselectedItemColor: Colors.black38,
-            items: [
+            items: const [
               BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
               BottomNavigationBarItem(icon: Icon(Icons.search), label: ''),
               BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ''),

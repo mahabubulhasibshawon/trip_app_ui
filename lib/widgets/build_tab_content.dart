@@ -40,7 +40,7 @@ class BuildTabContent extends StatelessWidget {
               children: [
                 PopularItem(title: "Alley Palac", rating: "4.1", image: "assets/images/Alley Palace.png"),
                 const SizedBox(width: 16),
-                PopularItem(title: "Alley Palac", rating: "4.1", image: "assets/images/Alley Palace.png"),
+                PopularItem(title: "Alley Palac", rating: "4.1", image: "assets/images/CoeurdesAlpes.png"),
               ],
             ),
           )

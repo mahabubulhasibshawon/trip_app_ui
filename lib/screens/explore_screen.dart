@@ -31,6 +31,7 @@ class _ExploreScreenState extends State<ExploreScreen>
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: Column(
           children: [
             SizedBox(
@@ -83,9 +84,8 @@ class _ExploreScreenState extends State<ExploreScreen>
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 25, vertical: 5),
                 decoration: BoxDecoration(
-                  color: Color(0xFFF3F8FE),
-                  borderRadius: BorderRadius.circular(20)
-                ),
+                    color: Color(0xFFF3F8FE),
+                    borderRadius: BorderRadius.circular(20)),
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: "Find places to visit",
@@ -94,7 +94,26 @@ class _ExploreScreenState extends State<ExploreScreen>
                   ),
                 ),
               ),
-            )
+            ),
+            TabBar(
+                controller: _tabController,
+                indicatorColor: Color(0xFF176FF2),
+                labelColor: Color(0xFF176FF2),
+                unselectedLabelColor: Color(0xFFB8B8B8),
+                labelStyle: GoogleFonts.robotoCondensed(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
+                ),
+                unselectedLabelStyle: GoogleFonts.robotoCondensed(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16
+                ),
+                tabs: [
+                  Tab(text: 'Location'),
+                  Tab(text: 'Hotels'),
+                  Tab(text: 'Foods'),
+                  Tab(text: 'Adventure'),
+                ])
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(

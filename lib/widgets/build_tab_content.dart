@@ -43,6 +43,27 @@ class BuildTabContent extends StatelessWidget {
                 PopularItem(title: "Alley Palac", rating: "4.1", image: "assets/images/CoeurdesAlpes.png"),
               ],
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Recomended",
+                style: GoogleFonts.montserrat(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18,
+                  color: Color(0xFF232323),
+                ),
+              ),
+              Text(
+                "See all",
+                style: GoogleFonts.montserrat(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18,
+                  color: Color(0xFF176FF2),
+                ),
+              )
+            ],
           )
         ],
       ),
